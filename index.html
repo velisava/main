@@ -55,7 +55,7 @@
 			 	document.getElementsByClassName('gsc-tabHeader gsc-inline-block gsc-tabhInactive')[0].click();
 			 }}
 			function adblock(){
-					  document.getElementsByClassName('gsc-adBlock')[0].innerHTML = 'test'
+					  document.getElementsByClassName('gsc-adBlock')[0].remove();
 					  }
 			
 			 function startSearch() { 
@@ -66,7 +66,7 @@
 
 
 			 setTimeout(changeToImages(), 500);}); 
-			 			 setTimeout(adblock(), 1000);}); 
+			 setTimeout(adblock(), 1000);}); 
 
 			 } 
 
