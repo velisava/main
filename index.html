@@ -12,40 +12,28 @@
   height: 100%;
   /* margin: 5px; */
 }
-
 #left:hover{
   cursor: pointer;
 }
-
 #right {
   float: right;
   background-color: grey;
   width: 75%;
   height: 100%;
 /*  padding: 10px;*/ 
-
 }
-
 #searchBox{
-
-
   width: 100%;
   height: 100%;
-
-
-
 }
-
 </style>
 
 		<script>	
-
 			navigator.permissions.query({
   name: 'clipboard-read'
 }).then(permissionStatus => {
   // Will be 'granted', 'denied' or 'prompt':
   console.log(permissionStatus.state);
-
   // Listen for changes to the permission state
   permissionStatus.onchange = () => {
     console.log(permissionStatus.state);
@@ -54,33 +42,19 @@
 			function changeToImages(){ if(document.getElementById('imageSearch').value === 'true'){
 			 	document.getElementsByClassName('gsc-tabHeader gsc-inline-block gsc-tabhInactive')[0].click();
 			 }}
-			function adblock(){
-					  document.getElementsByClassName('gsc-adBlock')[0].remove();
-					  }
 			
 			 function startSearch() { 
 			 navigator.clipboard.readText().then(searchQuery => {document.getElementsByTagName("input")[0].value = searchQuery;
 			 document.getElementsByTagName('button')[0].click();
 			
-
-
-
-			 setTimeout(changeToImages(), 500); 
-			 setTimeout(adblock(), 1000);
-
+			 setTimeout(changeToImages(), 500);}); 
 			 } 
-
-
 			 // function startSearch() { 
 			 // let searchQuery = getClipData();//.substring(7);
 			 // document.getElementsByTagName("input")[0].value = searchQuery;
 			 // document.getElementsByTagName('button')[0].click();
 			 // document.getElementById('translate').innerHTML = '<p>'+searchQuery+'</p>'
-
-
-
 			 // setTimeout(changeToImages(), 500);
-
 			
 			 // }
 		</script>
