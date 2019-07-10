@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Line TO List</title>
+	<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto 10% auto;
+  background-color: khaki;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+p {
+
+	font-size: 14px;
+}
+
+#separator{
+
+	width: 50px;
+
+}
+
+textarea{
+
+width: 100%;
+height:100%;
+
+}
+</style>
+</head>
+<body>
+
+
+
+<div class="grid-container">
+	<div class="grid-item" id="inputBox">
+		<textarea></textarea>
+	</div>
+	<div class="grid-item" id="settings">
+		<button id="run" onclick="sep()" >START</button><br>
+<center><p>Separator:<input type="text" id="separator" value=","></p> </center>
+	</div>
+	<div class="grid-item" id="outputBox">
+		<textarea></textarea>
+	</div>
+</div>
+
+</body>
+<script type="text/javascript">
+function sep(){
+	let sepSymbol = document.querySelector("#separator").value;
+	let inputBox = document.querySelector("#inputBox > textarea").value.split('\n');
+	console.log(inputBox);
+	let outputBox = document.querySelector("#outputBox > textarea");
+	outputBox.innerHTML = inputBox.join(sepSymbol+' ');
+
+}
+
+function unsep(){
+	let sepSymbol = document.querySelector("#separator").value;
+	let inputBox = document.querySelector("#inputBox > textarea").value;
+	inputBox = inputBox.replace(/\s/g, '');
+	inputBox = inputBox.split(separator);
+	outputBox.innerHTML= inputBox.join('\n')
+
+
+}
+
+</script>
+</body>
+</html>
